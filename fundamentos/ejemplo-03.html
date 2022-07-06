@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let edades      = [10, 15, 12, 20, 21, 45, 32, 5]
+        let promedio    = 0
+        let edadesSize  = edades.length // Tamanio del array : 3
+        console.log("Tamanio del array: ", edadesSize)
+        // Acceder a la primera edad
+        // edades[0] donde 0 es la primera posicion
+        console.log(edades[0])
+
+        let sumaEdades = 0
+        for (let i = 0; i < edadesSize; i++){
+            // 0
+            // 1
+            // 2
+            // PARA
+            // Acumular las edades
+            sumaEdades += edades[i]
+        }
+        promedio = sumaEdades/edadesSize
+        console.log("Despues del FOR: ", promedio, sumaEdades, edadesSize)
+        
+
+        // EDADES MAYOR A 10 ANIOS
+        // [10, 15, 12, 20, 21, 45, 32, 5]
+        // 2 elemento menor a 10 anios
+        // demas mayor a 10 anios
+        // Sumar 6 elementos
+        let count = 0
+        let sumaMayor10 = 0
+        for(let i = 0; i < edadesSize; i++){
+            if(edades[i] > 10){
+                count++ // Sumo de 1 en 1 
+                sumaMayor10 += edades[i]
+            }
+        }
+        let promMayor10 = sumaMayor10 / count
+        console.log("Promedio mayor a 10 anios: ", promMayor10)
+    </script>
+</body>
+</html>

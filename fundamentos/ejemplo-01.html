@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nombre  = "Alex"
+        var apellido = "Casadevall"
+        const edad = 30 
+        console.log(nombre, apellido, edad)
+
+        // Como funciona el "let"
+        // Block-scoped
+        if(true){
+            let nombre2 = "Juan"
+            console.log(nombre2)
+        }
+
+        // EJEMPLO: Verificar si una persona es mayor de edad
+        const MAYOR_EDAD = 18
+        let edad2 = 19
+        let cond = edad2 > MAYOR_EDAD // 19 > 18 -> SI
+        console.log("Es mayor de edad: ", cond)
+    </script>
+</body>
+</html>

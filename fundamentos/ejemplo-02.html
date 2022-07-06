@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            EJERCICIO RAPIDO #1: Un pasajero puede viajar en avion si cumple con las siguientes
+            condiciones: 
+                - Tener todas las dosis de COVID
+                - Cedula o pasaporte
+                - Ticket del vuelo
+
+                Verificar si el pasajero puede viajar
+                    -> "Pasajero puede viajar"
+                Caso contrario
+                    -> "Pasajero no puede viajar"
+        */
+        let dosisCovid  = true
+        let tieneCedula = true
+        let tienePass   = false
+        let tieneTicket = true
+
+        // Cadena de cond. OR
+        let tieneCedulaOPass = tieneCedula || tienePass // true || false -> true
+
+        let puedeViajar = dosisCovid && tieneCedulaOPass && tieneTicket // true && true && true
+
+        if(!puedeViajar){
+            console.log("Puede viajar")
+        } else {
+            console.log("No puede viajar")
+        }
+
+    </script>
+</body>
+</html>

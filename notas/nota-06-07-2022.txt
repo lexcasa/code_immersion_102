@@ -1,0 +1,157 @@
+- ROADMAP: 
+    -> Fundamentos de JS
+    -> GIT (versionado de codigo)
+    -> FrontEnd en VueJS
+        -> Framework
+            -> Obj. operaciones CRUD
+    -> Backend en NodeJS
+        -> NodeJS
+        -> Base de datos MYSQL
+    -> Despliegue en un servidor web
+        -> Exponer en internet
+    
+    Proyecto: 
+        -> POC: Proof of concept
+            -> Aplicar
+                -> Backend
+                -> FrontEnd
+                -> Base de datos
+        -> Trello
+            -> Herramienta de gestion de proyectos
+
+    Fundamentos de programacion JS
+
+        1. Def. de variables y tipos
+        2. Logica
+        3. Iteracion y control de flujo
+        4. Metodos y est. de datos
+
+    
+    Def. de variables y tipos
+
+        -> Espacio de memoria reservado con un nombre
+            -> Almacenar informacion
+                -> Tres tipos de definiciones
+                    -> let
+                    -> var
+                    -> const
+            -> Sintaxis: 
+                [let, var o const] nombreVariable = valor
+                    -> Ejemplo: 
+                        -> let nombre = "Alex"
+
+        -> Tipos de datos
+            -> string, int, float, boolean, object, function
+                -> let nombre = "Alex" -> Esto es un string
+
+        Diferencias entre let, var, const
+            -> var: es para def. de variables globales en un script
+            -> let: block-scoped (alcance de bloque)
+                - La variable va a existir solo dentro del IF
+                if(cond){
+                    let hola = "Hola Mundo"
+                }
+            -> const: es una constante que no se puede re asignar un valor a lo largo del script
+
+    Logica
+        -> Cualquier pregunta de contexto o abierta se puede responder en sub preguntas
+           donde la respuesta es SI/NO
+
+            -> Condicionales logicas
+                -> respuestas [true, false] // true: SI
+                                            // false: NO
+            // Comparaciones aritmeticas
+            // Comparamos valores
+            EJEMPLO: Verificar si una persona es mayor de edad
+                const MAYOR_EDAD = 18
+                let edad = 19
+                let cond = edad > MAYOR_EDAD // 19 > 18 -> SI
+                cond -> true
+
+            // Comparaciones logicas
+            // Ya comparamos condicionales
+
+            Cadenas de cond. AND: Para que una cadena de condicional AND sea true todos elementos
+            de la cadena deben ser true, si existe por lo menos un elemento false
+            Entonces la cadena entera es false
+
+                let condCadenaAND = cond1 && cond2 && ... && condN
+                    condCadenaAND -> true si todos los cond_i son true
+                    si existe un cond_i false entonces condCadenaAND es false
+
+            Cadenas de cond. OR: Para que una cadena de condicional OR sea false todos los elementos
+            de la cadena deben ser false, si existe por lo menos un elemento true
+            Entonces la cadena entera es true
+
+                let condCadenaOR = cond1 || cond2 || ... || condN
+                    condCadenaOR -> false si todos los cond_i son false
+                    si existe un cond_i true entonces condCadenaOR es true 
+
+            EJERCICIO RAPIDO #1: Un pasajero puede viajar en avion si cumple con las siguientes
+            condiciones: 
+                - Tener todas las dosis de COVID
+                - Cedula o pasaporte
+                - Ticket del vuelo
+
+                Verificar si el pasajero puede viajar
+                    -> "Pasajero puede viajar"
+                Caso contrario
+                    -> "Pasajero no puede viajar"
+
+
+            IF .. ELSE 
+
+            Solo entra en el codigo del if
+            si la condicional es true
+
+            if(condicional){
+                // Codigo #1
+            } else {
+                // Codigo #2
+            }
+
+            IF ... ELSE IF .. ELSE
+
+             if(condicional1){
+                // Codigo #1
+            } else if (condicional2) {
+                // Codigo #2
+            } else {
+                // Codigo #3
+            }
+
+    Iteracion y control de flujo
+
+        Iteracion
+            -> recorrer una estructura (array) o un bucle (repeticiones de codigo)
+                -> Control de flujo
+                    -> dado la repeticion del codigo puedo decidir lo que dejo pasar o no
+
+                    for (...){
+                        if(...){
+
+                        } else {
+
+                        }
+                    }
+
+        Array: 
+            -> vector: 
+                (v0, ..., vN) -> N elementos
+                -> Posicion: 0, ... N-1
+                -> Tamanio: length: Cantidad de elementos del vector
+
+                let edades = [10, 15, 12]
+
+                for: 
+                    -> posicion
+                    -> condicional de corte (en que momento para el FOR)
+                    -> step 
+            
+            EJERCICIO RAPIDO #2: Calcular el promedio de edades de una clase
+                -> [10, 15, 12]
+                    Promedio: 
+                        -> suma de todas las edades dividido la cantidad de alumnos
+                        -> promedio: 37/3
+                    Mostrar en consola el promedio
+                        -> console.log("Promedio:", 37/3) 
