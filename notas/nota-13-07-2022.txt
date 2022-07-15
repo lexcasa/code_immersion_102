@@ -1,0 +1,86 @@
+EJERCICIO RAPIDO #1: Define 5 variables con nombres distintos utilizando let, var y const
+    -> mostrar en la consola
+    -> console.log(variable)
+    -> console.log(variable1, variable2, ...)
+
+    let nombre = "Alex"
+    let edad   = 10
+    ...
+
+    var 
+    ...
+
+    const 
+    ...
+
+EJERCICIO RAPDIO #2: Define 4 variables con nombres distintos que contengan valores numéricos. 
+Luego compare 1 a 1 entre ellos utilizando los siguientes operadores aritméticos:
+    mayor (>),
+    menor (<)
+    mayor o igual (>=)
+    menor o igual (<=)
+    igual (==)
+    equivalentes (===)
+    diferente (!=)
+    distintos (!==)
+
+    let num1 = 5
+    let num2 = 10
+    ...
+
+    console.log(num1 > num2)
+    console.log(num3 > num4)
+    console.log(num1 < num2)
+    console.log(num1 >= num2)
+    console.log(num1 == num2)
+    console.log(num1 === num2)
+    console.log(num1 != num2)
+    console.log(num1 !== num2)
+    ...
+
+    num1 <= num2 
+    5 <= 10
+    true
+
+    num2 <= num1
+    10 <= 5
+    false
+
+    num1 == num2
+
+
+EJERCICIO RAPIDO #3: Define 4 variables con nombres distintos que contengan valores booleanos. 
+Luego compare 1 a 1 entre ellos utilizando los siguientes operadores lógicos:
+    AND (&&)
+    OR (||)
+    NOT (!variable)
+
+    let bool1 = true
+    let bool2 = false
+
+    console.log(bool1 && bool2)
+    console.log(!bool1)
+    console.log(!bool2)
+
+EJERCICIO RAPIDO #4: 
+
+    Un aeropuerto permite viajar hacia el exterior a pasajeros que cumplan las siguientes condiciones
+        - Pasaporte al día (true / false)
+        - Pasaje de aerolínea (true / false)
+        - PCR negativo (true / false)
+    Hacer el test y mostrar en consola para los casos que el pasajero puede y no puede viajar.
+
+EJERCICIO RAPIDO #5: 
+
+Un sitio web debe permitir a un usuario ingresar si es mayor de edad (18 años)
+Hacer el test para los siguientes casos
+    Un usuario que nació en 2010
+    Un usuario que nació en 2007
+    Un usuario que nació en 1983
+Investigar sobre el objeto “Date” para extraer el año actual y hacer las comparaciones pertinentes
+
+Obj: new Date()             -> Fecha de hoy
+(new Date()).toISOString()  -> Fecha de hoy : zulu time : 2022-07-13T23:33:35.916Z
+(new Date()).toISOString().split('-') -> Fecha de hoy transformamos en un array -> ['2022', '07', '13T23:34:17.754Z']
+(new Date()).toISOString().split('-')[0] -> Al array obtento el primer elemento
+

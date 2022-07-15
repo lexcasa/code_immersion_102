@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const MAYOR_EDAD = 18
+        let anioActual = (new Date()).toISOString().split('-')[0]
+        let nacimiento01 = 1983
+        let nacimiento02 = 2007
+        let nacimiento03 = 2010
+
+        console.log(anioActual - nacimiento01 > MAYOR_EDAD)
+        console.log(anioActual - nacimiento02 > MAYOR_EDAD)
+        console.log(anioActual - nacimiento03 > MAYOR_EDAD)
+    </script>
+</body>
+</html>
