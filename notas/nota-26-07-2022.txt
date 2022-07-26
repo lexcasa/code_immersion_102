@@ -1,0 +1,77 @@
+EJERCICIO: Dado un array de edades [10,20,30,21] obtener el promedio de las mismas 
+y desplegar en pantalla a través de un alert
+
+    -> Input: Array de edades, lista de edades, [10,20,30,21]
+        -> Algoritmo: Son las instrucciones que transforma el input en Output
+    -> Output: Promedio
+        -> 10 + 20 + 30 + 21 / 4
+        -> 81/4
+
+    ALGORITMO: 
+        -> Cuantos elementos tengo en la lista
+            -> Como la maquina cuenta los elementos de la lista?
+                -> comando: edades.length
+        -> Recorrer las edades y cada elemento dentro de edades la sumo
+            HUMANO:
+                -> 10 + 20 = 30
+                -> 30 + 30 = 60
+                -> 60 + 21 = 81
+
+            MAQUINA: 
+                let count = 0
+                for (let i = 0; i < edades.length; i++){
+                    count += edades[i]
+                    // Primera vuelta: cuando i = 0
+                        -> count += edades[0]
+                            -> count = 0 + 10
+                    // Segunda vuelta: cuando i = 1
+                        -> count += edades[1]
+                            -> count = 10 + 20
+                    ...
+                }
+
+                -> 10
+                -> 20
+                -> 30
+                -> 21
+            
+            ACUMULADOR: 
+                -> Sumar la variable anterior con el valor actual
+
+            El ultimo valor del count = 81
+
+        -> Calcular el promedio
+            -> la suma de los elementos de edades dividido cuantos elementos tengo en la lista
+                -> let promedio = count / edades.length
+                    -> promedio = 81 / 4
+
+        FUNCIONES: 
+        -> Ejemplo: Quiero sumar dos numeros
+            -> let num1 = 1
+            -> let num2 = 1
+            -> let suma = num1 + num2 
+
+            const suma = function (num1, num2){
+                let sum = num1 + num2
+                return sum 
+            }
+
+            let suma2 = suma(435, 5)
+            let suma3 = suma(1000, 15)
+
+            Sintaxis: 
+                -> const nombreFuncion = function(parametros ...){
+                    # Codigo ...
+                }
+
+        EJERCICIO: Crear funciones para una calculadora básica entre dos números, suma, resta, multiplicación y división
+
+            - Operaciones: 
+                -> suma
+                -> resta
+                -> multiplicación
+                -> división
+                    - a / b 
+                        -> donde b != 0
+            
+            
