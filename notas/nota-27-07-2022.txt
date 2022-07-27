@@ -66,3 +66,8 @@
                 -> Definis la variable
                 -> Grabas dentro del HTML
                     document.querySelector('div').innerText = "Texto"
+
+    EJERCICIOS RAPIDO #2: 
+        1. Obtener el nombre de una etiqueta <div> y escribir en una etiqueta <p>
+        2. Obtener el apellido de una etiqueta <p> y escribir en una etiqueta <div>
+        3. Calcular la suma de dos numeros y escribir en una etiqueta <p> 
