@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Obtener el nombre de una persona a traves de una etiqueta <p> -->
+        <p>Alex</p>
+    <script>
+        // GETTER 
+        let nombre  = document.querySelector('p').innerText
+        let nombre2 = "Juan"
+        console.log("nombre: ", nombre)
+        // Si quiero escribir un valor nuevo en esa etiqueta P
+        // Entonces escribo el siguiente comando:
+        // SETTER
+        document.querySelector('p').innerText = nombre2 // Le va a escribir el valor "Juan"
+    </script>
+</body>
+</html>

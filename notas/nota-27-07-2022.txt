@@ -1,0 +1,68 @@
+- Como HTML y JS se comunican?
+    EJEMPLO: 
+        -> Defino un nombre en una variable y quiero mostrar en un parrafo
+            -> let nombre = "Alex" ----> <p>Alex</p> 
+
+- Existe un objeto en JS que nos permita manipular las etiquetas del HTML?
+    - Analogo a como lo hace el CSS
+    SI, EXISTE
+        -> DOM
+            -> Document Object Model
+    Para tener el HTML dentro de JS tengo a traves del obj: document
+
+    -> Puedo obtener el HTML dentro de JS
+    -> Si puedo enviar variables de JS dentro del HTML
+
+    Ciclo de GETTER y SETTER
+
+    GETTER: Obtengo datos del HTML al JS
+        -> document
+            -> tengo todo el HTML
+                -> Como hago para obtener:
+                    -> El texto de una etiqueta <p>
+                    -> El valor de un input 
+                    -> El texto de otra etiqueta HTML
+
+    SETTER: Envio datos del JS al HTML
+
+        -> tengo las variables de JS
+            -> Como hago para enviar:
+                -> El texto a una etiqueta <p>
+                -> El valor a un input
+                ...
+
+    GETTER: 
+        -> EJEMPLO: Obtener el nombre de una persona dentro de una etiqueta <p>
+        almacenar en una variable y mostrar en consola
+
+            -> Para obtener la etiqueta <p> dentro de JS
+                -> document.querySelector('p')
+                    -> Obtenermos la etiqueta <p> dentro de JS
+                    -> Para extraer el texto utilizamos la propiedad: innerText
+
+                    cmd: document.querySelector('p').innerText
+
+    document: obtengo TODO el HTML dentro del JS
+    .querySelector(etiqueta, clase, id): obtiene el elemento HTML especifico 
+        -> Ejemplo: document.querySelector('p') voy a traer solo la <p> del HTML 
+
+        -> Ejemplo 2: Si tengo una clase:
+            <p class="hola"> ... </p>
+                -> document.querySelector('.hola')
+
+        -> Ejemplo 3: Si tengo una id
+            <p id="mundo"> ... </p>
+                -> document.querySelector('#mundo')
+
+    EJERCICIOS: 
+        1. Escribir nombre en una etiqueta <div>
+        2. Escribir apellido en una etiqueta <p>
+        3. Escribir edad en una etiqueta <p> 
+
+        TODO: 
+            -> HTML 
+                -> Etiqueta vacia
+                -> Definis un script
+                -> Definis la variable
+                -> Grabas dentro del HTML
+                    document.querySelector('div').innerText = "Texto"
