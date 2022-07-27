@@ -73,5 +73,35 @@ y desplegar en pantalla a través de un alert
                 -> división
                     - a / b 
                         -> donde b != 0
-            
+
+        EJERCICIO: Crear una calculadora para productoria, donde los dos parámetros de entrada son arrays
+            Ejemplo: productoria ( array1, array2 )
+            sumTotal = array1[1] * array2[1] * … array1[n-1] * array2[n-1]
+            Observar que el largo de los dos arrays deben ser los mismos
+
+            Ejemplo: 
+                Arr1: [2, 2]
+                Arr2: [1, 2]
+
+                sumTotal = 2 * 1 * 2 * 2
+                sumTotal = 2 * 4
+                sumTotal = 8
+
+            -> largo del array1 tiene que ser igual que el largo del array2
+                -> ejecuta la productoria
+            -> error
+
+        Dos tipos de funciones
+            -> Funciones con retorno
+                -> Resultado de la funcion se puede almacenar en una variable 
+
+            -> Funciones de ejecuccion o de procedimiento
+                -> Donde se ejecutan instrucciones pero no se almacena valor
+
+        Crear una calculadora para sumatorias, donde los dos parámetros de entrada son arrays
+            Ejemplo: sumatoria ( array1, array2 )
+            sumTotal = array1[1] + array2[1] + … array1[n-1] + array2[n-1]
+            Observar que el largo de los dos arrays deben ser los mismos
+
+
             

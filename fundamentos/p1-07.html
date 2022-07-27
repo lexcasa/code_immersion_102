@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const productoria = function (arr1, arr2){
+            let sumTotal = 1
+            if(arr1.length == arr2.length){
+                for (let i = 0; i < arr1.length; i++){
+                    sumTotal = sumTotal * arr1[i] * arr2[i]
+                }
+                return sumTotal
+            }
+            return 'Error'
+        }
+        let product1 = productoria([2, 2], [1, 2])
+        console.log("product1: ", product1)
+
+        let product2 = productoria([2, 2], [1])
+        console.log("product2: ", product2)
+    </script>
+</body>
+</html>
