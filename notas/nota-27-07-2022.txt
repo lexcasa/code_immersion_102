@@ -71,3 +71,18 @@
         1. Obtener el nombre de una etiqueta <div> y escribir en una etiqueta <p>
         2. Obtener el apellido de una etiqueta <p> y escribir en una etiqueta <div>
         3. Calcular la suma de dos numeros y escribir en una etiqueta <p> 
+
+    HASTA AHORA SABEMOS OBTENER Y GRABAR TEXTO
+
+        -> Quiero obtener un HTML y escribir en otro HTML
+            -> Ejemplo: 
+                Input: <p>Hola Alex</p>
+                Output:
+                    <div>
+                        <p>Hola Alex</p>
+                    </div>
+
+        document.querySelector("p").outerHTML
+
+        outerHTML: Obtengo todo el HTML de una etiqueta
+        innerHTML: Inserto un HTML entero dentro de otra etiqueta
