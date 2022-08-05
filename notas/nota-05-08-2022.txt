@@ -1,0 +1,38 @@
+- Como se conectaba el HTML + JS
+    - objeto: document
+        - manipular las etiquetas del HTML
+
+            1. manipular el texto
+                -> Obtener el texto
+                -> Agregar un texto
+
+            2. manipular el HTML (interno/externo)
+                -> Obtener el HTML
+                -> Agregar un HTML
+
+    
+    EJEMPLO #1: Agregar la edad en una etiqueta <p>
+        -> Agregar edad
+            1. Definir la edad en una variable en el JS
+            2. Manipular la etiqueta <p>
+            3. Asignar el valor de la edad en esa etiqueta <p>
+
+    Manipulacion de TEXTO:
+
+    HTML ----> JS : GETTER
+        * Obtener un texto de una etiqueta y asignarle a una variable de javascript
+
+        EJEMPLO #2: Quiero obtener el nombre de una etiqueta <p> y mostrar en consola
+
+    JS ------> HTML : SETTER
+        * Crear una variable en javascript y asignar el valor en una etiqueta HTML
+    
+
+    EJERCICIO RAPIDO #1: 
+        - GETTER:
+            -> Obtener nombre y apellido de una etiqueta <div> y mostrar en consola
+            -> Obtener la edad de una etiqueta <p> y mostrar en un alert
+        
+        - SETTER: 
+            -> Cambiar el nombre de un boton que previamente decia: "Enviar" para "Guardar"
+            -> Cambiar el nombre y apellido de una etiqueta <p> que decia: "Alex Correa" para "Juan Pardo"
