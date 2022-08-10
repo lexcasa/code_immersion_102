@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="resultado">
+        <!-- Aca va a ir la lista -->
+    </div>
+    <button onclick="mostrarLista()">Ver lista</button>
+    <script>
+        // Notacion de template html
+        let lista = `
+                <ul>
+                    <li>Manzana</li>
+                    <li>Pera</li>
+                    <li>Ajo</li>
+                </ul>
+            `
+        const mostrarLista = function (){
+            document.querySelector('#resultado').innerHTML = lista
+        }
+    </script>
+</body>
+</html>

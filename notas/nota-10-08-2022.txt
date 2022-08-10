@@ -1,0 +1,24 @@
+EJEMPLOS: 
+    #1 Obtener el HTML de una etiqueta <p>Mi nombre es Alex</p> e insertar en un 
+        <div id="resultado"></div>
+
+        1. Crear el HTML
+            -> Ver el resultado en el navegador
+
+    #2 Escribir apellido en una etiqueta <p>Hola Alex [[apellido]] </p> mediante el click en un botón.
+
+        1. Identificar que elemento va a ser [[apellido]]
+            -> Etiqueta auxiliar
+                -> <span id="apellido"></span>
+        2. Como disparo un clic en un boton y genero una accion en el HTML
+
+    #3 Desplegar una lista con productos: Manzana, Pera, Ajo en un HTML ul, li en un div id="resultado" al dar click en un boton "Ver lista"
+
+        Resultado esperado:
+        <div id="resultado">
+        <ul>
+                <li>Manzana</li>
+                <li>Pera</li>
+                <li>Ajo</li>
+            </ul>
+        </div>
