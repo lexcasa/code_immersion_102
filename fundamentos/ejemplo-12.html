@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Alex</button>
+    <script>
+        // Voy a escuchar el clic desde el JS
+        let boton = document.querySelector('button')
+        const verClickBoton = function (){
+            console.log("Esta haciendo clic?", this.innerText)
+            this.innerText = "Robert"
+        }
+        // Escuchar el clic
+        boton.addEventListener('click', verClickBoton)
+
+    </script>
+</body>
+</html>

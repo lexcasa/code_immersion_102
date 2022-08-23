@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+		<li>Manzana</li>
+		<li>Pera</li>
+		<li>Ajo</li>
+	</ul>
+    <input type="text">
+    <button>Agregar</button>
+    <div id="resultado">
+        <!-- p -->
+    </div>
+    <script>
+        let lista = document.querySelectorAll('li')
+        const muestraProductoInput = function (){
+            let productoTxt = this.innerText
+            document.querySelector('input').value = productoTxt
+        }
+        for (let i = 0; i < lista.length; i++){
+            lista[i].addEventListener('click', muestraProductoInput)
+        }
+
+        // 
+        let boton = document.querySelector('button')
+        const agregaProducto = function (){
+            let productTxt = document.querySelector('input').value
+            let productoP = `
+                <p>${productTxt}</p>
+            `
+            // <p>Manzana</p>
+            document.querySelector('#resultado').innerHTML += productoP
+        }
+        boton.addEventListener('click', agregaProducto)
+
+    </script>
+</body>
+</html>

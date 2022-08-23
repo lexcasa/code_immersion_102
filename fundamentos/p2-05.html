@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+		<li>Manzana</li>
+		<li>Pera</li>
+		<li>Ajo</li>
+	</ul>
+    <div id="resultado">
+        <!-- Le asigno el valor dentro de resultado -->
+    </div>
+    <script>
+        // Dar click en un ítem de la lista de productos y obtener el nombre en un div con id="resultado"
+        // Quiero ver todos los LI que tengo dentro de la lista
+        let lista = document.querySelectorAll('li')
+
+        const mostrarResultado = function (){
+            let productoTxt = this.innerText
+            document.querySelector('#resultado').innerText = productoTxt
+        }
+        // Tengo mas de un elemento HTML
+        // Tengo que recorrer todos los elementos y hacer que escuche el clic
+        for (let i = 0; i < lista.length; i++){
+            lista[i].addEventListener('click', mostrarResultado)
+        }
+
+        console.log(lista)
+    </script>
+</body>
+</html>

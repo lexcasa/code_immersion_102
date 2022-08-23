@@ -1,0 +1,23 @@
+- Escuchar el click de un elemento HTML
+    ElementoHTML.addEventListener('click', function () {....})
+
+    EJERCICIO: 
+
+        1. Dar click en un ítem de producto y cargar el nombre en un input type="text"
+        2. Dar click en "agregar" y carga el ítem en un div resultado dentro de en una etiqueta <p>
+
+        - Sabemos como asignar el valor a una etiqueta de estructura
+            -> etiqueta p
+            -> div
+            -> ul, li
+
+                -> document.querySelector(etiqueta).innerText
+                    .... .innerHTML
+                         .outerHTML
+
+        
+        - Si tengo un input: 
+            - <input type="text" value="" >
+            - El att value contiene el valor de lo que yo escribo
+
+            EJEMPLO: Tengo una etiqueta <p>Alex</p> y asignar el nombre a un input luego de dar clic en <p>
