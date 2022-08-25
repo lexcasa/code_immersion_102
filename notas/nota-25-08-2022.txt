@@ -1,0 +1,66 @@
+- FRONTEND
+    -> Conocer a la framework: Vue2
+    -> Aplicacion del lado del cliente
+        -> Integrar una App con una API
+        -> Manejar arq. de componentes MVC
+
+    EJEMPLO: 
+        -> Escribir el nombre en un input y al dar clic en el boton "Saludar"
+        Que aparezca el resultado en una etiqueta <p>Hola, Alex!</p>
+        
+        -> Problemas a resolver: 
+            -> Como se conecta HTML <----> JS
+        
+
+    Setup de una APP minima
+        0. Creo una carpeta /app con un archivo index.html dentro
+        1. Agrego el link de la CDN de Vue en el head del index.html
+        2. Creo un archivo que es app.js
+        3. Instanciar mi aplicacion en Vue
+            -> crear un div con id="app" en index.html
+            -> En el app.js voy a crear el objeto de la app de Vue
+                -> new Vue({
+                    el: "#app",
+                    data: {
+                        ...
+                    }
+                })
+
+                -> atributo: el va a decir donde vive mi aplicacion
+                -> atributo: data van estar las variables de mi aplicacion
+            -> Incluir el app.js dentro del index.html
+    ALCANCE: 
+        -> Todas las variables y funciones de mi aplicacion en VUE
+        Van a funcionar dentro del div con id="app"
+    
+    DATA-BIND:
+        -> Renderizar una variable de JS dentro del HTML utilizando una notacion
+            -> handlebars:
+                {{nombre_variable}}
+
+
+    JS -----> HTML a traves del data-bind
+
+    HTML ----> JS
+        -> Directivas
+            v-model="nombre_variable"
+
+    JS ---- data: { nombre: "" } ---> HTML
+    HTML --- v-model="nombre"    ---> JS
+
+
+    v-model="nombre" <---> data: { nombre: "" }
+
+
+    HTML ---> JS ---> HTML
+
+    -> Para manipular los eventos tengo que conectar una directiva con una funcion (methods)
+        -> Directiva @click="mostrarSaludo()"
+        
+
+    CONCEPTO TOGGLE: 
+        -> Verificador de estados
+            -> Si la lista es visible
+                -> Al dar click oculto la lista
+            -> Si la lista no es visible
+                -> Al dar click muestro la lista

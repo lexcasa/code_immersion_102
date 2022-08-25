@@ -21,3 +21,18 @@
             - El att value contiene el valor de lo que yo escribo
 
             EJEMPLO: Tengo una etiqueta <p>Alex</p> y asignar el nombre a un input luego de dar clic en <p>
+
+    APLICACION: 
+        -> Lista de supermercado: 
+            -> Agregar elementos en una lista
+            -> Acciones sobre items: 
+                -> Completar
+                -> Eliminar
+                -> Editar 
+
+        UI: 
+
+            [Pera_____] [Agregar]
+
+            * Manzana [v][x][e]
+            * ------- [v][*][*]

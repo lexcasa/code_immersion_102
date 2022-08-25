@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- Mostrar / Ocultar -->
+        <div id="resultado">
+            <ul v-if="visible">
+                <!--
+                    v-for es un directiva que recorre una lista definida en el data
+                    -> utiliza dos valores (item, i)
+                        -> donde: item es c/elemento de la lista
+                        -> i es el indice
+                        -> Para mostrar c/elemento de la lista en el HTML
+                            -> utilizamos {{item}}
+                -->
+                <li v-for="(item, i) in lista" :key="i">{{item}}</li>
+            </ul>
+        </div>
+        <button @click="toggleLista()">Ver lista</button>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
