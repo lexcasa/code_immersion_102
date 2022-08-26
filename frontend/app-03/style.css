@@ -1,0 +1,6 @@
+.completado {
+    opacity: 0.4;
+}
+.completado span {
+    text-decoration: line-through;
+}

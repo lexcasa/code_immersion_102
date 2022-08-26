@@ -1,0 +1,38 @@
+APLICACION: 
+        -> Lista de supermercado: 
+            -> Agregar elementos en una lista
+            -> Acciones sobre items: 
+                -> Completar
+                -> Eliminar
+                -> Editar 
+
+        UI: 
+
+            [Pera_____] [Agregar]
+
+            * Manzana [v][x][e]
+            * ------- [v][*][*]
+    
+    To-Do LIST
+
+        -> HTML Resultante
+        -> Programar la logica
+        -> Integrar el JS --- HTML
+
+    v-bind:class="item.completado == true ? 'completado' : ''"
+        -> Cargame el class="completado" si item.completado es true
+        -> Caso contrario no carga nada
+
+    -> Guardar en una API
+        -> en un servidor Externo
+
+    Persistir la lista
+        -> Memoria del navegador
+        -> En una API
+
+        App ---- API: Server
+            -> A traves de una URL
+                -> lista.com/productos
+                    -> Dos tipos de peticiones
+                        -> Obtener datos
+                        -> Enviar datos
