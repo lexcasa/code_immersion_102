@@ -1,0 +1,48 @@
+Lista de compras
+    - Crear la funcionalidad de Editar el item
+        - Siempre que el item no este completado
+    - Guardar en memoria
+        -> Si recargo la pagina obtengo la lista que tenia creada y persisto en la pantalla
+        -> LocalStorage
+    - API y WebServer 
+
+    EDITAR ITEM DE LA LISTA
+        - Seleccionar el item y agregar en input
+        - Verificar que el elemento que estoy editando se correlaciona con uno de los elementos de la lista
+
+    Dentro del Navegador podemos almacenar informacion que persiste mientras el navegador este funcionando
+        -> LocalStorage
+        -> SessionStorage
+        -> IndexDB
+
+    - API y WebServer
+
+        -> API: Application Programming Interface
+            -> INPUT -> API -> OUTPUT
+            -> API se conecta con una base de datos
+            -> I/O : JSON
+                -> JSON: JavaScript Object Notation
+                    -> I/O viajan a traves de internet por el protocolo HTTP
+                        -> http://
+                        -> https://
+                        -> HTTP: Hypertext transfer protocol
+
+        Web: 
+           Servidor web: {Base de datos + WEB}
+                -> Monolito    
+
+            [[Base de datos ... N] --- [ API ]] -- HTTP/S -- [ N Apps ]
+
+            Std. de datos
+                -> JSON
+
+        -> Instalar (Servidor web local)
+            -> NodeJS: https://nodejs.org/es/
+            -> Gestor de paquetes
+                -> npm
+                -> npm i -g http-server
+            -> Comando: 
+                -> http-server -p 8080 -c-1
+            
+            -> Entramos a traves del navegador con la siguiente URL:
+                http://localhost:8080/
