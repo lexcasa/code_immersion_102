@@ -1,0 +1,14 @@
+[
+    {
+        "nombre":"Alex",
+        "edad": 30,
+        "cedula": 51111111,
+        "barrio": "Cordon"
+    },
+    {
+        "nombre":"Robert",
+        "edad": 35,
+        "cedula": 511111233,
+        "barrio": "Cordon"
+    }
+]

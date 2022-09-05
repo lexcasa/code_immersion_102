@@ -1,0 +1,90 @@
+- Como se comunica un API con una APP en VueJS
+    -> [ [ Base de datos ] --- [ API ] ] -- HTTP -- [APP: VueJS]
+    -> HTTP: Hypertext Transfer Protocol
+        -> HTTP
+        -> HTTP/S
+        -> Websocket
+            -> Real Time
+
+    -> [ API ] --- HTTP ---- [ APP VueJS ]
+        -> HTTP Verbose (Metodos de HTTP)
+            -> GET
+            -> POST
+            -> PUT
+            -> DELETE
+
+            Operaciones CRUD
+                -> Create, Read, Update y Delete
+                    -> GET      : Read
+                    -> POST     : Create
+                    -> PUT      : Update
+                    -> DELETE   : Delete
+        
+        -> Login de Facebook
+            
+            1. Agrego en el formulario
+                - Usuario
+                - Clave
+            
+            2. Doy clic en ingresar
+                - Agarro los datos en el paso 1
+                -> Envio los datos a la API de facebook a traves de un POST
+                    -> API de facebook tiene una URL
+                        -> facebook.com/login
+                        -> POST, facebook.com/login
+                        -> Payload: 
+                            {
+                                usuario: "alex",
+                                clave: "123"
+                            }
+
+                            JSON: JavaScript Object Notation
+                                -> Std de datos
+
+            3. Si el usuario es correcto
+                -> Redireccionar al muro de facebook
+            
+            4. Si el usuario es incorrecto
+                -> Me devuelve un error
+            
+            App Facebook: React
+                -> Aplicacion de cliente
+
+
+            std. de datos
+                -> API
+                -> App: VueJS
+
+        
+    EJERCICIOS RAPIDOS: 
+        1. Lista de productos de un archivo .json y quiero mostrar esos productos en una tabla
+            -> Producto:
+                -> Nombre: Manzana
+                -> Cantidad: 10
+                -> Precio: 200
+
+            -> App en VueJS
+            -> Peticion de tipo GET al archiv que va estar almacenado en mi carpeta: app-04
+                -> Productos.json
+            -> Volcar los productos en una tabla HTML despues de obtener los datos
+
+            -> 1 Servidor web : HTTP Server
+            -> Libreria HTTP Client
+                -> Traer para el JS los verbos HTTP se puedan utilizar en funciones
+                    -> axios
+
+                PLAN: 
+                    -> Cuando cargo la pagina
+                        -> mounted(){
+                            ... 
+                        }
+                    -> Hago la peticion GET hacia el archivo y verifico el conteido
+                        -> console.log(this.productos)
+        2. Obtener los datos de una persona a traves de la peticion GET de un archivo persona.json
+
+            {
+                "Nombre":"Alex",
+                "Edad":30,
+                "Cedula":511111,
+                "Barrio":"Cordon"
+            }

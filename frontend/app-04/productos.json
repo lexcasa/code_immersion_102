@@ -1,0 +1,22 @@
+[
+    {
+        "nombre":"Manzana",
+        "cantidad":10,
+        "precio":200
+    },
+    {
+        "nombre":"Pera",
+        "cantidad":10,
+        "precio":100
+    },
+    {
+        "nombre":"Naranja",
+        "cantidad":10,
+        "precio":300
+    },
+    {
+        "nombre":"Durazno",
+        "cantidad":10,
+        "precio":300
+    }
+]
