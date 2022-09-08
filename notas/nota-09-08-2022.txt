@@ -1,0 +1,26 @@
+- Automatismo:
+    ->  Comando que al ejecutar corra el servidor web
+    -> cmd #1 ---> http-server -p 8080 -c-1
+    -> npm init
+        -> Crea un archivo: package.json
+    -> Creamos un comando dentro del objeto "scripts"
+        -> nombre_comando : comando
+        -> Ejemplo: "server":"http-server -p 8080 -c-1"
+    -> Ejecutamos:
+        -> npm run server
+        -> Sintaxis: npm run nombre_comando
+
+
+    -> Enviar datos hacia una API
+        -> crudcrud.com
+        Modelo: Productos
+            -> Nombre
+            -> Precio
+                -> Dar de alta el producto
+                -> Ver en algun lado si se dio de alta o no
+
+        -> HTML
+            -> FORMULARIO
+        -> Funcion en VUE que captura los datos del formulario
+        -> Generar la peticion contra la API
+            -> POST https://crudcrud.com/api/03430e20d73944c1bac914ae52d0c09a/productos
