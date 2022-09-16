@@ -1,0 +1,23 @@
+- Operaciones CRUD
+    -> Create   : POST
+    -> Read     : GET
+    -> Update   : PUT
+    -> Delete   : DELETE
+
+    Flujo EDITAR
+        1. Seleccionar el producto en la tabla de productos
+            1.1 Carga el producto en formulario
+        2. Verificar que el _id tiene datos
+            -> No es null
+        3. Al guardar el producto
+            -> En vez de enviar con un POST vamos a enviar con PUT
+    
+    Flujo Editar
+        1. Avisar al usuario que vamos a eliminar
+            -> Si es OK
+                -> Enviamos una peticion DELETE a la API
+    --- 
+
+    -> Transformar el Crud de productos en un componente
+        -> Generalizar las funcionalidades
+        -> Transformar en un componente de VUE
