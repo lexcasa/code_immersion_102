@@ -1,0 +1,44 @@
+- Vue: 
+    -> Componentes reutilizables
+    -> Vue Router
+        -> Aplicacion tipo SPA (Single Page Application): 
+            -> Orientada a estados
+                -> Aplicacion que no recarga
+    
+    Componente: 
+        -> Una parte funcional de una pagina web o sistema
+
+        1. Single file component
+            -> Un archivo que concentra toda funcionalidad
+        
+        2. Async component
+            -> Cargo el componente de forma diferida donde el HTML lo cargo a traves de una peticion HTTP
+    
+    EJERCICIO RAPIDO #1: Crear una web que tenga el registro de: 
+        -> Cliente  - CRUD
+        -> Producto - CRUD
+
+        Funcionalidad: 
+            -> Si doy clic en el menu de Cliente me aparece el CRUD de Cliente
+            -> Si doy clic en el menu de Producto me aparece el CRUD de Producto
+
+    
+    FLUJO: 
+        -> Login de usuario: 
+            -> Pantalla 1: 
+                -> Formulario: 
+                    -> Email
+                    -> Clave
+                    -> Button
+
+            -> Pantalla 2:
+                -> Panel de control
+                    -> Con un texto: "Bienvenido, Usuario"
+
+            
+            Pantalla 1 ---> Pantalla 2
+                -> Redireccion
+
+        -> Controles: 
+            -> Si el usuario y clave son: admin entonces deja ingrsar
+            -> Caso contrario da un error
