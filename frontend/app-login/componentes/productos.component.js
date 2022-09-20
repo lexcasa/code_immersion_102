@@ -3,7 +3,7 @@ const COMP_PRODUCTO_CRUD = {
     nombre: '',
     precio: ''
 }
-Vue.component('producto-crud', {
+const ProductoComp = Vue.component('producto-crud', {
     data: function (){
         return {
             mensaje: "Productos",
@@ -73,6 +73,7 @@ Vue.component('producto-crud', {
     },
     template: `
         <div id="producto-crud">
+            <menu-component></menu-component>
             <h2>{{mensaje}}</h2>
             <form action="">
                 <div v-for="(valor, key) in item" v-if="valor != undefined">

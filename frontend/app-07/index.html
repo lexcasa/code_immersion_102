@@ -19,17 +19,22 @@
             <li>
                 <a href="#" @click="cambiarEstado('productos')">Productos</a>
             </li>
+            <li>
+                <a href="#" @click="cambiarEstado('tiendas')">Tiendas</a>
+            </li>
         </ul>
         <!-- Vamos a cargar los componentes -->
         <div>
             <cliente-crud v-if="estado == 'clientes'"></cliente-crud>
             <producto-crud v-if="estado == 'productos'"></producto-crud>
+            <tienda-crud v-if="estado == 'tiendas'"></tienda-crud>
         </div>
     </div>
     
     <!-- Componentes -->
     <script src="componentes/clientes.component.js"></script>
     <script src="componentes/productos.component.js"></script>
+    <script src="componentes/tiendas.component.js"></script>
 
     <!-- App -->
     <script src="app.js"></script>

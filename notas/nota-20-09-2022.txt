@@ -1,0 +1,48 @@
+PASO A PASO:
+- Creamos un componente SFC
+    0. Si el componente es: TIENDA
+    1. Cambiamos las propiedades del COMP_TIENDA_CRUD
+        - Agregamos o quitamos propiedades
+    2. En la variable item agregamos el spred con el obj nuevo
+        -> item: {...COMP_TIENDA_CRUD}
+    3. En la funcion initDatos tambien asignamos la variable item al obj COMP_TIENDA_CRUD
+        -> this.item = {...COMP_TIENDA_CRUD}
+    4. Cambiar el nombre del componente: tienda-crud
+    5. Cambiar el id del html dentro del template para el mismo nombre del Componente
+        -> id="tienda-crud"
+
+- Agregamos el SFC dentro de la app
+    1. Agregamos el script con el src apuntando al archivo JS del componente
+        -> <script src="componentes/tiendas.component.js"></script>
+    2. Agregar el componente dentro del div de la app con su etiqueta custom
+        <tienda-crud></tienda-crud>
+
+
+-> APP de tipo SPA
+    -> SPA: Single page application
+        -> Aplicaciones que estan en una pagina sola y no recargan
+            -> Aplicaciones orientadas a estados
+                -> Estado: 
+                    URL, Componente 
+                
+                ESTADOS: 
+
+                    Login: 
+                        - URL: /
+                        - Componente: login.component.js
+
+                    Panel: 
+                        - URL: /panel
+                        - Componente: panel.component.js
+
+    -> Dentro del panel
+        -> Clientes
+        -> Productos
+
+            Clientes:
+                -> URL: /clientes
+                -> Comp: clientes.component.js
+            
+            Productos: 
+                -> URL: /productos
+                -> Comp: productos.component.js

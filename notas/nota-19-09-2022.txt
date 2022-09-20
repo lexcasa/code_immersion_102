@@ -8,7 +8,7 @@
     Componente: 
         -> Una parte funcional de una pagina web o sistema
 
-        1. Single file component
+        1. Single file component: SFC
             -> Un archivo que concentra toda funcionalidad
         
         2. Async component

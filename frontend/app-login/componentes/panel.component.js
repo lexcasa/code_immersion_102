@@ -7,6 +7,7 @@ const PanelComp = Vue.component('panel-component', {
     template: `
         <div id="panel-component">
             <h2>{{mensaje}}</h2>
+            <menu-component></menu-component>
         </div>
     `
 })

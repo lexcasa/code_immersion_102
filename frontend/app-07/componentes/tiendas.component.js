@@ -1,23 +1,21 @@
-const COMP_CLIENTE_CRUD = {
+const COMP_TIENDA_CRUD = {
     _id: undefined,
     nombre: '',
-    apellido: '',
-    edad: '',
-    nacimiento: ''
+    direccion: ''
 }
-const ClienteComp = Vue.component('cliente-crud', {
+Vue.component('tienda-crud', {
     data: function (){
         return {
-            mensaje: "Clientes",
-            item: {...COMP_CLIENTE_CRUD},
+            mensaje: "Tiendas",
+            item: {...COMP_TIENDA_CRUD},
             items: [],
             API: 'https://crudcrud.com/api/f234c00a387848a890a4dc3a43138b42',
-            MODEL: '/clientes'
+            MODEL: '/tiendas'
         }
     },
     methods: {
         initDatos: function (){
-            this.item = {...COMP_CLIENTE_CRUD}
+            this.item = {...COMP_TIENDA_CRUD}
         },
         // t=1
         guardar: function (){
@@ -74,8 +72,7 @@ const ClienteComp = Vue.component('cliente-crud', {
        this.obtenerItems()
     },
     template: `
-        <div id="cliente-crud">
-            <menu-component></menu-component>
+        <div id="tienda-crud">
             <h2>{{mensaje}}</h2>
             <form action="">
                 <div v-for="(valor, key) in item" v-if="valor != undefined">
