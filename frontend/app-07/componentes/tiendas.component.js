@@ -9,7 +9,7 @@ Vue.component('tienda-crud', {
             mensaje: "Tiendas",
             item: {...COMP_TIENDA_CRUD},
             items: [],
-            API: 'https://crudcrud.com/api/f234c00a387848a890a4dc3a43138b42',
+            API: API,
             MODEL: '/tiendas'
         }
     },

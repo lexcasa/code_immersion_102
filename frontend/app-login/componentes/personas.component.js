@@ -1,21 +1,22 @@
-const COMP_PRODUCTO_CRUD = {
+const COMP_PERSONA_CRUD = {
     _id: undefined,
     nombre: '',
-    precio: ''
+    cedula: '',
+    edad: ''
 }
-Vue.component('producto-crud', {
+const PersonaComp = Vue.component('persona-crud', {
     data: function (){
         return {
-            mensaje: "Productos",
-            item: {...COMP_PRODUCTO_CRUD},
+            mensaje: "Personas",
+            item: {...COMP_PERSONA_CRUD},
             items: [],
             API: API,
-            MODEL: '/productos'
+            MODEL: '/personas'
         }
     },
     methods: {
         initDatos: function (){
-            this.item = {...COMP_PRODUCTO_CRUD}
+            this.item = {...COMP_PERSONA_CRUD}
         },
         // t=1
         guardar: function (){
@@ -72,7 +73,8 @@ Vue.component('producto-crud', {
        this.obtenerItems()
     },
     template: `
-        <div id="producto-crud">
+        <div id="persona-crud">
+            <menu-component></menu-component>
             <h2>{{mensaje}}</h2>
             <form action="">
                 <div v-for="(valor, key) in item" v-if="valor != undefined">

@@ -2,11 +2,7 @@ Vue.component('menu-component', {
     data: function (){
         return {
             items: [
-                {to: '/clientes', nombre: 'Clientes'},
-                {to: '/productos', nombre: 'Productos'},
-                {to: '/tiendas', nombre: 'Tiendas'},
-                {to: '/personas', nombre: 'Personas'},
-                {to: '/', nombre: 'Cerrar sesion'},
+                {to: '/tienda', nombre: 'Tiendas'},
                 {to: 'https://facebook.com', nombre: 'Ir a facebook', external: true}
             ]
         }

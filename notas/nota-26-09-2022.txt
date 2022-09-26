@@ -1,0 +1,76 @@
+- Base de datos
+    -> Def: Almacenar informacion de forma estructurada que persiste en el tiempo
+
+        -> Base de datos: Relacional
+            -> SQL: Structured Query Language
+            -> Motor: MYSQL
+            -> XAMPP
+                -> Servidor web + Servidor de base de datos
+
+    -> Base de datos minima: 
+        -> Soportar las operaciones CRUD
+            -> Crear registros
+            -> Leer registros
+            -> Actualizar registros
+            -> Eliminar registros
+        -> Informacion tiene que persistir en el tiempo
+        ...
+
+        -> Tiene que tener soporte de tipo de datos
+            -> INT, TEXT, VARCHAR
+        -> Tienen que tener un soporte logico
+        -> Tiene que tener un soporte de estr. de tablas
+    
+    -> Para que necesitamos una base de datos?
+        - Sistemas bancarios
+        - Tiendas online
+        - Logistica
+        etc
+
+
+    -> Resuelven dos tipos de problemas: 
+        -> Locales
+            -> La simple existencia de la base de datos no resuelve el problema completo
+                -> Chat
+
+        -> Generales
+            -> Agenda telefonica
+
+    Problemas de SQL: 
+        -> Objetivo de la base de datos
+        -> Modelar la realidad del problema
+            -> Entidades
+            -> Relaciones
+
+    PROBLEMA #1:
+        Tengo una tienda que vende celulares y quiero saber cuanto vendi por mes a mis clientes
+
+        -> Tienda: Mi negocio fisico ---> Nombre base de datos
+        -> Producto (Entidad): celulares
+        -> Clientes (Entidad): consumidores
+
+        -> Como interactuan los Productos con Clientes
+            -> Compras (relacion):
+                -> Abs: Cliente --- compra --- producto
+                -> Realidad: Alex --- compra --- iPhone
+
+    PROBLEMA #2: 
+        Tengo un galpon que guarda aluminio en chapa y quiero saber en que periodo del mes esta al maximo
+        y a que periodo del mes esta vacio
+
+            -> Obj. optimizar
+
+            -> Galpon : Base de datos
+            -> Aluminio en chapa : producto
+            -> Stock: Relacion
+
+                -> Stock: Producto y una cantidad
+                    -> (Producto, Cantidad, Fecha)
+                    
+                    -> (Aluminio, 10, 26-09-2022)
+                    -> (Aluminio, -5, 27-09-2022)
+
+
+
+
+        

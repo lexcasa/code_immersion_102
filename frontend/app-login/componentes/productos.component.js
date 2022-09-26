@@ -9,7 +9,7 @@ const ProductoComp = Vue.component('producto-crud', {
             mensaje: "Productos",
             item: {...COMP_PRODUCTO_CRUD},
             items: [],
-            API: 'https://crudcrud.com/api/f234c00a387848a890a4dc3a43138b42',
+            API: API,
             MODEL: '/productos'
         }
     },

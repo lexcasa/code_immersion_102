@@ -11,7 +11,7 @@ const ClienteComp = Vue.component('cliente-crud', {
             mensaje: "Clientes",
             item: {...COMP_CLIENTE_CRUD},
             items: [],
-            API: 'https://crudcrud.com/api/f234c00a387848a890a4dc3a43138b42',
+            API: API,
             MODEL: '/clientes'
         }
     },

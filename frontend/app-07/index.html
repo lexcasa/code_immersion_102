@@ -22,19 +22,28 @@
             <li>
                 <a href="#" @click="cambiarEstado('tiendas')">Tiendas</a>
             </li>
+            <li>
+                <a href="#" @click="cambiarEstado('personas')">Personas</a>
+            </li>
         </ul>
         <!-- Vamos a cargar los componentes -->
         <div>
             <cliente-crud v-if="estado == 'clientes'"></cliente-crud>
             <producto-crud v-if="estado == 'productos'"></producto-crud>
             <tienda-crud v-if="estado == 'tiendas'"></tienda-crud>
+            <persona-crud v-if="estado == 'personas'"></persona-crud>
         </div>
     </div>
+
+    <script>
+        const API = 'https://crudcrud.com/api/8b9469464dcc444984729e7534cf7011'
+    </script>
     
     <!-- Componentes -->
     <script src="componentes/clientes.component.js"></script>
     <script src="componentes/productos.component.js"></script>
     <script src="componentes/tiendas.component.js"></script>
+    <script src="componentes/personas.component.js"></script>
 
     <!-- App -->
     <script src="app.js"></script>
