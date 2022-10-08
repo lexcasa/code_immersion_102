@@ -1,0 +1,112 @@
+PROBLEMA DE NEGOCIO: 
+    - Organizar el negocio - Estandarizar
+    - Metodologia
+    - Optimizas 
+
+PROBLEMA DE BASE DE DATOS: 
+    - Organizar el negocio - Estandarizar
+    - Optimizas 
+
+
+    -> Entidades: 
+        -> Conjunto de propiedades que hacen unica a la entidad
+            -> Ejemplo: 
+                -> Persona: nombre, cedula
+                -> Cliente: nombre, edad
+
+
+    Realidad del negocio
+        -> Conjunto de entidades
+            -> Entidad 1
+            -> Entidad 2
+            ...
+        -> Relaciones entre si
+            -> Rel 1
+            -> Rel 2
+            ...
+
+
+1. Dada la realidad de un negocio de logística, es necesario organizar un stock de componentes para automóviles. Los automóviles están divididos en marcas: Audi, Fiat, Ford, Etc. Los ejemplos de componentes que se pueden encontrar en el stock son: Kit de inyección, Carburador, Pistones, aire acondicionado, cubiertas, llantas, etc.
+
+    ENTIDADES: 
+
+    -> Autos: (modelo, marca, matricula)
+    -> Componentes (repuesto, cod)
+    -> Marcas (nombre)
+
+    RELACION: 
+
+    -> Stock
+        (auto, componente, cantidad)
+
+    
+    SIMULAR DATOS: 
+        -> Autos: 
+            - (206, Peugeot, ABC123)
+            - (A1, Audi, ACC123)
+        
+        -> Componentes: 
+            - (Kit inyección, 123)
+            - (Carburador, 111)
+
+        -> Stock: 
+
+            - (ABC123, 123, -10)
+                -> 206 Peugeot - ABC123 saco del stock 10 kits de inyección
+                -> Valor negativo de cantidad hace referencia al EGRESO
+        
+            - (NULL, 123, 50)
+                -> Ingreso al stock 50 kits de inyección
+                    -> Valor positivo de cantidad + el valor NULL del auto hace referencia al INGRESO
+
+    BASE DE DATOS: 
+        -> Tablas: 
+            -> Autos
+            -> Componentes
+            -> Marcas
+            -> Stock
+
+            -> Marcas: 
+
+            | ID (PK)   | Nombre   |
+            ------------------------
+            | 1         | Peugeot  |
+            | 2         | Audi     |
+
+            -> Autos: 
+            | ID (PK)    | Modelo | ID Marca (FK) | Matricula (UK)   |
+            ----------------------------------------------------------
+            | 1          | 206    | 1             | ABC123           | 
+            | 2          | A1     | 2             | ABC111           | 
+
+            ID: Clave Primaria
+                -> Unico al registro y se toma como posicion de referencia
+                -> Dame el auto de ID = 1
+                    -> Peugeot 206 con matricula ABC123
+                -> PK
+                -> Auto Incremental
+                    -> Va de 1 en 1
+
+            Matricula: Clave unica: UK 
+                -> Ese valor a nivel de todos los registros NO SE PUEDE REPETIR
+
+            ID Marca: Clave foranea: FK
+                -> Hace referencia a un valor de una tabla exterior donde tienen en comun 
+                    Su ID (PK) y su FK 
+                    Marcas.ID = Autos.ID Marca
+    
+        -> Componentes: 
+
+            | ID (PK)   | Repuesto          |
+            ---------------------------------
+            | 1         | Kit de inyección  |
+            | 2         | Carburador        |
+            | 3         | Neumatico 22"     | 
+
+        -> Stock: 
+
+            | ID (PK)   | ID Auto (FK)      | ID Componente (FK)    | Cantidad |
+            --------------------------------------------------------------------
+            | 1         | 1                 | 1                     | -10      |
+            | 2         | NULL              | 1                     | 50       |
+
