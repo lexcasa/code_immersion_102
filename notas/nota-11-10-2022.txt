@@ -1,0 +1,65 @@
+ BASE DE DATOS: 
+        -> Tablas: 
+            -> Autos
+            -> Componentes
+            -> Marcas
+            -> Stock
+
+            -> Marcas: 
+
+            | ID (PK)   | Nombre   |
+            ------------------------
+            | 1         | Peugeot  |
+            | 2         | Audi     |
+
+            -> Autos: 
+            | ID (PK)    | Modelo | ID Marca (FK) | Matricula (UK)   |
+            ----------------------------------------------------------
+            | 1          | 206    | 1             | ABC123           | 
+            | 2          | A1     | 2             | ABC111           | 
+
+            -> Componentes: 
+
+            | ID (PK)   | Repuesto          |
+            ---------------------------------
+            | 1         | Kit de inyección  |
+            | 2         | Carburador        |
+            | 3         | Neumatico 22"     | 
+
+            -> Stock: 
+
+            | ID (PK)   | ID Auto (FK)      | ID Componente (FK)    | Cantidad |
+            --------------------------------------------------------------------
+            | 1         | 1                 | 1                     | -10      |
+            | 2         | NULL              | 1                     | 50       |
+
+        -> Crear las tablas en un gestor de base de datos
+            -> XAMPP 
+                -> levanta un servidor de base de datos MYSQL
+                -> http://localhost
+                    -> PHPMYADMIN: gestor de base de datos
+        
+        -> Dos fundamentos
+            -> Fundamentos de estructura
+                -> Crear/modificar estructura de base de datos y tablas
+                -> Indices
+            -> Fundamento de datos
+                -> Op. CRUD
+                    -> Create : INSERT, INTO, VALUES
+                    -> Read : SELECT, FROM, WHERE
+                    -> Update : UPDATE, SET, WHERE 
+                    -> Delete : DELETE, FROM, WHERE
+
+        -> Ingresar dos marcas en la base de datos
+            -> Peugeot, Audi
+
+            Query: 
+                INSERT INTO marcas (Nombre)
+                VALUES ("Peugeot"), ("Audi");
+
+        -> Ingresar dos componentes en la base de datos: 
+            ->  Kit de inyección, Carburador
+
+            Query: 
+                INSERT INTO componentes (Repuesto)
+                VALUES ("Kit de inyección"), ("Carburador");
