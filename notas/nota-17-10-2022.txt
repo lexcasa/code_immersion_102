@@ -1,0 +1,195 @@
+- Fundamentos de datos: 
+    -> Operaciones CRUD
+        -> Create: INSERT, INTO, VALUES
+        -> Read: SELECT, FROM, WHERE
+        -> Update: UPDATE, SET, WHERE
+        -> Delete: DELETE, FROM, WHERE
+    -> Cruzamientos
+        -> A partir de una tabla que contiene FK consigo construir la informacion completa
+            - Reportes
+
+    
+    Create:
+        - Query - Sintaxis: 
+            INSERT INTO nombre_tabla (col1, col2, ..., colN)
+            VALUES (val1, val2, ..., valN);
+
+            --> Ejemplo: 
+
+            INSERT INTO componentes (Repuesto)
+            VALUES ("Farol");
+    
+    Read: 
+        - Query - Sintaxis: 
+            SELECT col1, ..., colN-1 FROM nombre_tabla
+            WHERE [condicional]
+
+            SELECT * FROM nombre_tabla
+            WHERE [condicional]
+
+
+            EJEMPLO #1: Quiero traer todos los valores de las columnas de la tabla componentes
+                Query: SELECT * FROM componentes
+
+            EJEMPLO #2: Quiero obtener solo las ID's de tabla componentes
+                Query: SELECT ID FROM componentes
+
+        ---> Condicionales: 
+
+                EJEMPLO #3: Quiero el repuesto que tiene ID = 2
+
+                    Query: SELECT * FROM componentes 
+                           WHERE ID = 2
+
+        Update: 
+
+            Query - Sintaxis: 
+                UPDATE nombre_tabla SET col1 = val1, ... colN = valN
+                WHERE [condicional]
+
+            
+            EJEMPLO #4: Quiero editar el repuesto que esta con la ID = 1 a "Kit de inyección electronica"
+
+                Query: 
+                    UPDATE componentes SET Repuesto = "Kit de inyección electronica"
+                    WHERE ID = 1
+
+        Delete: 
+
+            Query - Sintaxis: 
+                DELETE FROM nombre_tabla
+                WHERE [condicional]
+
+            EJEMPLO #5: Queremos eliminar el kit de inyección que quedo sobrando
+                -> ID = 4
+
+                DELETE FROM componentes
+                WHERE ID = 4
+
+        Reportes: 
+            1. Saber el movimiento de stock de los componetes
+
+                | Componente                    | Cantidad |
+                --------------------------------------------
+                | Kit de inyección electronica  | 100      |
+                | Kit de inyección electronica  | -2       |
+
+            
+                Paso intermedio: 
+
+                | IdComponente | Cantidad |
+                ---------------------------
+                | 1            | 100      |
+                | 1            | -2       |
+
+                Query: SELECT IdComponente, Cantidad FROM stock
+
+                    -> Aliases: Transformar el nombre de una columna al nombre que yo quiera
+
+                        -> IdComponente ----> Componente
+                        Aliases - Sintaxis: Nombre_Viejo AS Nombre_Nuevo
+
+                        Ejemplo: SELECT IdComponente AS Componente, Cantidad FROM stock
+
+                        | Componente   | Cantidad |
+                        ---------------------------
+                        | 1            | 100      |
+                        | 1            | -2       |
+
+
+                    -> Cruzamientos: 
+                        Conectar la tabla donde tiene la FK con la tabla que contiene la PK
+
+                            Sintaxis cruzamiento dos tablas (tabla A, tabla B): 
+                                SELECT tabla_A.*, tabla_B.* FROM tabla_A
+                                JOIN tabla_B ON tabla_B.PK = tabla_A.FK 
+
+                            SELECT * FROM stock
+                            JOIN componentes ON componentes.ID = stock.IdComponente
+
+                                Componente ---> componentes.Repuesto
+                                Cantidad   ---> stock.Cantidad
+
+                            Query: 
+
+                                SELECT
+                                    componentes.Repuesto AS Componente,
+                                    stock.Cantidad
+                                FROM stock
+                                JOIN componentes ON componentes.ID = stock.IdComponente
+
+
+            2. Saber a que autos se vendieron los componentes
+
+            | Auto    | Componente                    | Cantidad |
+            ------------------------------------------------------
+            | SLV1232 | Kit de inyección electronica  | -2       | 
+
+
+            -> Cruzar tres tablas: 
+                -> stock, autos, componentes
+
+                stock ---- componentes
+                stock ---- autos 
+
+                Sintaxis cruzamiento tres tablas (tabla A, tabla B, tabla C): 
+                    SELECT tabla_A.*, tabla_B.*, tabla_C.* FROM tabla_A
+                    JOIN tabla_B ON tabla_B.PK = tabla_A.FK_b
+                    JOIN tabla_C ON tabla_C.PK = tabla_A.FK_c 
+
+                -> SELECT * FROM stock
+                   JOIN componentes ON componentes.ID = stock.IdComponente
+                   JOIN autos       ON autos.ID       = stock.IdAuto
+
+                    -> 
+                        Auto        ---> autos.Matricula
+                        Componente  ---> componentes.Repuesto
+                        Cantidad    ---> stock.Cantidad
+
+                        -> 
+                            SELECT 
+                                autos.Matricula AS Auto,
+                                componentes.Repuesto AS Componente,
+                                stock.Cantidad
+                            FROM stock
+                            JOIN componentes ON componentes.ID = stock.IdComponente
+                            JOIN autos       ON autos.ID       = stock.IdAuto
+
+
+
+            3. Saber a que autos y marca se vendieron los componentes
+
+            | Marca   | Auto    | Componente                    | Cantidad |
+            ----------------------------------------------------------------
+            | Peugeot | SLV1232 | Kit de inyección electronica  | -2       | 
+
+
+            Cruzar cuatro tablas
+
+                cruzar 3 tablas en paralelo y dos tablas en pipe 
+
+                Quiero: Componente ---> componentes --- stock
+                Quiero: Auto       ---> autos       --- stock
+                Quiero: Cantidad   ---> stock
+                Quiero: Marca      ---> marcas      --- autos --- stock
+
+
+                SELECT * FROM stock
+                JOIN componentes ON componentes.ID = stock.IdComponente
+                JOIN autos       ON autos.ID       = stock.IdAuto
+                JOIN marcas      ON marcas.ID      = autos.IdMarca
+
+                Marca: marcas.Nombre
+                Auto: autos.Matricula
+                Componente: componentes.Repuesto
+                Cantidad: stock.Cantidad
+
+                SELECT
+                    marcas.Nombre AS Marca,
+                    autos.Matricula AS Auto,
+                    componentes.Repuesto AS Componente,
+                    stock.Cantidad
+                FROM stock
+                JOIN componentes ON componentes.ID = stock.IdComponente
+                JOIN autos       ON autos.ID       = stock.IdAuto
+                JOIN marcas      ON marcas.ID      = autos.IdMarca
