@@ -1,0 +1,54 @@
+NodeJS
+
+    -> Instalar NodeJS
+        -> Gestor de paquetes: npm
+    
+    -> Backend
+        -> Logica de mi aplicacion
+            -> Base de datos
+            -> Servicios
+        -> Programar: JS
+            -> Fundamentos de JS dentro del node
+
+                1. Def. de variables y tipos
+                2. Logica
+                3. Iteracion y control de flujo
+                4. Metodos y est. de datos
+                5. Modulos
+
+    EJEMPLO #1: Mostrar "Hola Mundo" en consola.
+
+        -> node app.js
+            -> desplegar en la consola el mensaje: "Hola Mundo"
+    
+    EJEMPLO #2: Sumar dos numeros y mostrar su resultado en la consola con el siguiente mensaje: 
+    "Resultado: {{suma}}"
+        -> Dos numeros: 
+            a = 1
+            b = 2
+            Mensaje: "Resultado: 3"
+    
+    EJEMPLO #3: Mostrar el saludo a una persona -> "Hola, Alex" 
+        -> let persona = "Alex"
+        -> let saludo  = "Hola, "
+    
+    EJEMPLO #4: Verificar si una persona es mayor de edad o no
+        -> let edad = 30
+        -> const MAYOR_EDAD = 18
+            -> Verificar: 
+                -> Si es mayor de edad
+                    -> muestro un mensaje de exito
+                -> Si es menor de edad
+                    -> muestro un mensaje de error
+    
+    EJEMPLO #5: Encontrar el promedio de las edades de una clase
+        -> let edades = [10, 15, 20, 23, 33]
+    
+    EJEMPLO #6: Crear una funcion que devuelva un saldo al ingresar el nombre de una persona
+
+    EJEMPLO #7: Definir un modelo de datos para un sistema que carga clientes
+        -> nombre, documento
+        -> let cliente = {
+            nombre: "Alex",
+            documento: 123123
+        } ---> Objeto
