@@ -1,0 +1,50 @@
+NodeJS: 
+
+    - Fundamentos de programacion
+        1. Def. de variables y tipos
+        2. Logica
+        3. Iteracion y control de flujo
+        4. Metodos y est. de datos
+        ---
+        5. Modulos
+
+
+        EJEMPLO #1: Crear una funcionalidad para resolver las op. elementales de una calculadora
+        (entre dos numeros: a y b)
+
+            1. Suma entre a y b
+            2. Resta entre a y b
+            3. Multiplicacion entre a y b
+            4. Division entre a y b, siempre que b sea distinto de 0
+
+        --- Programar las funcionalidades 1 vez y reutilizar en otros problemas
+            -> En el caso que quiera ampliar las funcionalidades tocaria un solo archivo
+        
+        NOMENCLATURA: 
+            -> Todos nuestros modulos vamos a utilizarlos como servicios
+                -> <nombreModulo>.service.js
+                    -> Ejemplo: calculadora.service.js
+
+        Trabajando con servicios: 
+
+            1. Programar las funciones
+            2. Probar c/funcion con casos conocidos
+                -> Ejemplo: 
+                    -> Si hago la funcion suma: 
+                        -> resultado: a + b
+                            -> 1 + 1 = 2
+                            -> suma(1, 1) --- 2
+
+            -> Prueba algoritmica
+                -> Dado un input conocido espero un output conocido
+        
+
+    OBS: Si quiero utilizar un modulo desde otro archivo .js - tengo que: 
+        1. Exportarlo
+            --> module.exports = NombreModulo
+
+        2. Requerirlo en el archivo nuevo
+            -> const NombreModulo = require('./NombreModulo.service')
+
+
+    EJEMPLO 2: Modificar la funcion Suma que si "a" es mayor que 10.000 que devuelva un error
