@@ -1,0 +1,161 @@
+- API: 
+    -> Application Programing Interface
+
+    Diagrama: 
+
+        { [ base de datos ] -- [ Backend : API ] } -- HTTP -- [ App's FrontEnd ]
+
+
+        EJEMPLO #1: Quiero obtener la lista de clientes en mi aplicacion web
+            - Backend
+                -> Est. de datos
+                -> Metodo que se va a consumir los datos
+                -> Url para consumir la informacion
+        
+        -> Def. Cliente: 
+            -> nombre, documento, email
+                -> objeto: 
+                    {
+                        "nombre":"Alex",
+                        "documento":123123,
+                        "email":"lexcasa@gmail.com"
+                    }
+                -> Schema: 
+                    {
+                        "nombre": String,
+                        "documento": Number,
+                        "email": String
+                    }
+                
+                -> Si cada cliente es un objeto, entonces una lista de clientes
+                    -> array de objetos
+
+                        Output: 
+                            [
+                                {
+                                    "nombre":"Alex",
+                                    "documento":123123,
+                                    "email":"lexcasa@gmail.com"
+                                },
+                                {
+                                    "nombre":"Juan",
+                                    "documento":111222,
+                                    "email":"juan@gmail.com"
+                                }
+                            ]
+            Metodos HTTP
+                -> GET
+                -> POST
+                -> PUT 
+                -> DELETE 
+            
+            Vamos a utilizar el metodo GET
+
+            Toda API tiene una URL de comunicacion.
+                -> Ejemplo: el servicio de crudcrud -- tiene la url: crudcrud.com 
+                    -> GET / crudcrud.com/123123/productos
+                        -> JSON: [{...}, ... ]
+
+                -> Como la API es en nuestra maquina local la url: 
+                    -> http://localhost:3000/clientes
+
+        Def. de estados
+            -> API de tipo REST
+
+                -> Estado: (url, metodo)
+                    -> Payload
+                    -> Response
+                
+
+                Clientes: 
+                    -> Estado: Obtener clientes
+                    -> Url: http://localhost:3000/clientes
+                    -> Metodo: GET
+                    -> Payload: null
+                    -> Response: [
+                                {
+                                    "nombre":"Alex",
+                                    "documento":123123,
+                                    "email":"lexcasa@gmail.com"
+                                },
+                                {
+                                    "nombre":"Juan",
+                                    "documento":111222,
+                                    "email":"juan@gmail.com"
+                                }
+                            ]
+        
+        EJEMPLO #2: Quiero obtener una lista de productos en un CRM de supermercado
+            -> Modelo de datos: 
+                -> Producto: {
+                    nombre: "Agua",
+                    cantidad: 10,
+                    precio: 200,
+                    marca: "Salus"
+                }
+
+                -> Lista de productos
+                    -> [
+                        {
+                            nombre: "Agua",
+                            cantidad: 10,
+                            precio: 200,
+                            marca: "Salus"
+                        },
+                        {
+                            nombre: "Jugo",
+                            cantidad: 10,
+                            precio: 200,
+                            marca: "Ades"
+                        }
+                    ]
+            
+            Productos: 
+                    -> Estado: Obtener productos
+                    -> Url: http://localhost:3000/productos
+                    -> Metodo: GET
+                    -> Payload: null
+                    -> Response: [
+                            {
+                                nombre: "Agua",
+                                cantidad: 10,
+                                precio: 200,
+                                marca: "Salus"
+                            },
+                            {
+                                nombre: "Jugo",
+                                cantidad: 10,
+                                precio: 200,
+                                marca: "Ades"
+                            }
+                        ]
+        
+        Setup API: 
+            1. Inicializar el proyecto
+                -> npm init 
+                    -> varias preguntas -- respondemos todo con enter
+            2. Dentro de la carpeta del proyecto crear un archivo que se llama: .gitignore
+                -> Vamos a escribir adentro dos lineas
+                    node_modules
+                    package-lock.json
+            3. Instalar los modulos para que funcione mi API
+                -> npm i --save express
+                    -> npm i    --> instalar
+                    -> --save   --> guardar la dependencia
+                    -> express  --> Nombre de la dependencia
+
+            4. Setup de la app.js
+
+
+    EJEMPLO #3: Quiero tener una API que al pasarle el nombre me retorne: Hola, {Nombre}. Donde nombre es variable
+        -> Si le paso Alex      ---> {saludo: "Hola, Alex"}
+        -> Si le paso Robert    ---> {saludo: "Hola, Robert"}
+
+        Estado: Saludo
+            -> Url: http://localhost:3000/saludo/:nombre ---> :nombre parametro variable
+            -> Metodo: GET
+            -> Payload: null 
+            -> Response: 
+                {
+                    saludo: "Hola, Alex"
+                }
