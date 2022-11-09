@@ -1,0 +1,73 @@
+- Crud conectado a la base de datos
+    - Tomar una tabla
+        - Aplicar las operaciones crud en las tablas
+            - Read: 
+                - Listar todos los elementos de la tabla
+                - Listar un elemento por ID
+                - Listar un reporte
+            
+            - Create, Update, Delete
+
+    - Autenticacion
+        - Login de un usuario con X role
+            - Admin
+            - Docente
+            - etc
+    
+    - Desarrollo fullstack
+        - Ensamblar: base de datos, backend, frontend
+
+
+ EJEMPLO #1: Tomamos la tabla "Componentes" vamos a obtener el listado de componentes o un componente por ID
+
+ - Antes: 
+    - Como se conecta: MYSQL con NodeJS
+    - Instalar un modulo que es mysql
+
+    EJ #1: Listar todos los items de la tabla componentes
+        -> Query: 
+            SELECT * FROM Componentes
+                -> ... 
+    
+
+    DB --- mdb.service -- Backend -- app ---- HTTP ---- Navegador
+
+
+    Estado - Listar componentes: 
+
+        URL: http://localhost:3000/components
+        Metodo: GET
+        Payload: null
+        Response: 
+        [
+            {
+                "ID": 1,
+                "Repuesto": "Kit de inyección electronica"
+            },
+            ...
+        ]
+
+    Estado - Obtener componente por ID: 
+
+        URL: http://localhost:3000/components/:id ---> ID va a ser variable
+        Metodo: GET
+        Payload: null
+        Response: 
+        {
+            "ID": 1,
+            "Repuesto": "Kit de inyección electronica"
+        }
+    
+    EJEMPLO #2: Quiero traer los autos con sus respectivas marcas: 
+        -> (Marca, Matricula, Modelo)
+        -> Query: 
+            SELECT * FROM autos
+            JOIN marcas ON autos.IdMarca = marcas.ID
+
+        -> 
+            SELECT 
+                marcas.Nombre AS Marca,
+                autos.Matricula,
+                autos.Modelo
+            FROM autos
+            JOIN marcas ON autos.IdMarca = marcas.ID
