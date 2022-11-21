@@ -1,0 +1,85 @@
+- Ops CRUD
+    -> Read: 
+        - Obtener todos los datos de una tabla
+        - Obtener datos por ID
+        - Obtener datos de reporte
+
+        - Todo a traves de GET
+    
+    -> Create: 
+        -> Ingresas datos no existentes en las tablas de la base de datos
+        a traves de una API que se comunica por POST
+
+        -> Estado del POST
+            -> POST, URL
+            -> Payload : tipo JSON -> {...}
+            -> Response : 
+                [
+                    {...}
+                ]
+
+        EJEMPLO #1: Agregar una marca a traves de la API
+
+            -> Campos de la tabla Marcas
+                -> ID, Nombre
+            
+            -> Campos que voy a enviar desde la API
+                -> Nombre 
+                Obs: ID no enviamos por que se auto-genera al insertar
+
+        Estado: Agregar Marca
+
+            - URL: /marcas
+            - Metodo: POST
+            - Payload: { "Nombre": "SEAT" }
+            - Response: 
+                - Success:
+                    { Success : true }
+                - Error:
+                    { Error : "Error no se pudo ingresar la marca" }
+
+        -> Utilizar una Query de INSERT INTO
+            -> Query: 
+                INSERT INTO marcas (Nombre)
+                VALUES (?)
+        
+        EJEMPLO #2: Con la API anterior se ingresaron algunas marcas de forma incorrecta
+        deberiamos tener la posibilidad de corregir las marcas por ID
+
+
+        Estado: Editar Marca
+
+            - URL: /marcas
+            - Metodo: PUT
+            - Payload: { "id": 4, "nombre": "HONDA" }
+            - Response: 
+                - Success:
+                    { Success : true }
+                - Error:
+                    { Error : "Error no se pudo ingresar la marca" }
+
+            Query: 
+                - UPDATE marcas SET Nombre = ?
+                  WHERE ID = ? 
+
+                  ? -- HONDA
+                  ? -- 4
+
+        EJEMPLO #3: Se desea eliminar valores incorrectos de la tabla marcas a traves de una API
+
+        Estado: Eliminar Marca
+
+            - URL: /marcas/:id ---> ID: 4
+            - Metodo: PUT
+            - Payload: null (opcional)
+            - Response: 
+                - Success:
+                    { Success : true }
+                - Error:
+                    { Error : "Error no se pudo ingresar la marca" }
+
+            Query: 
+                DELETE FROM marcas
+                WHERE ID = ?
+
+                ? -- 8

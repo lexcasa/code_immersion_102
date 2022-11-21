@@ -1,10 +1,14 @@
-const express = require('express')
+const express       = require('express')
+const bodyParser    = require('body-parser') 
 const app     = express()
 const port    = 3000
 
 const Componente = require('./services/componentes.service')
 const Auto       = require('./services/autos.service')
 const Reporte    = require('./services/reportes.service')
+const Marca      = require('./services/marcas.service')
+
+app.use( bodyParser.json() )
 
 // Def. de estados de la API
 app.get('/', (req, res) => {
@@ -35,6 +39,85 @@ app.get('/', (req, res) => {
         const id = req.params.id
         const arr = await Auto.byId(id)
         res.send(arr)
+    })
+
+// Marcas
+    app.get('/marcas', async (req, res) => {
+        const arr = await Marca.all()
+        res.send(arr)
+    })
+
+    app.get('/marcas/:id', async (req, res) => {
+        const id = req.params.id
+        const arr = await Marca.byId(id)
+        res.send(arr)
+    })
+
+    app.post('/marcas', async (req, res) => {
+        const marca = req.body
+        let arr     = undefined
+        
+        if (marca.nombre != ""){
+            arr = await Marca.new(marca)
+
+            if(arr.insertId > 0){
+                arr = {
+                    success: true
+                }
+            }
+        } else {
+            arr = {
+                error: "El campo marca no puede estar vacio"
+            }
+        }
+
+        res.send(arr)
+    })
+
+    app.put('/marcas', async (req, res) => {
+        const marca = req.body
+        let arr     = undefined
+        
+        if (marca.nombre != ""){
+            arr = await Marca.edit(marca)
+
+            if(arr.changedRows > 0){
+                arr = {
+                    success: true
+                }
+            } else {
+                arr = {
+                    error: "El valor no fue modificado"
+                }
+            }
+        } else {
+            arr = {
+                error: "El campo marca no puede estar vacio"
+            }
+        }
+
+        res.send(arr)
+    })
+
+    app.delete('/marcas/:id', async (req, res) => {
+        const id = req.params.id
+        try {
+            let arr = await Marca.delete(id)
+
+            if(arr.changedRows == 0 && arr.insertId == 0 && arr.affectedRows > 0){
+                arr = {
+                    success: true
+                }
+            } else {
+                arr = {
+                    error: "No se pudo eliminar el registro o esta eliminado"
+                }
+            }
+            res.send(arr)
+        } catch (e){
+            console.log(e)
+            res.send({error: "No se pudo eliminar el registro o esta eliminado"})
+        }
     })
 
 // Reportes
