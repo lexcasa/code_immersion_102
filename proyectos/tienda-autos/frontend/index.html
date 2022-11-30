@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{mensaje}}</h2>
+        <form action="">
+            <div v-for="(valor, key) in item" v-if="valor != undefined">
+                <input type="text" v-bind:placeholder="key" v-model="item[key]" v-bind:disabled="key == '_id'">
+            </div>
+            <button type="button" @click="guardar()">Guardar</button>
+            <button type="button" @click="initDatos()">Cancelar</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th v-for="(valor, key) in item">{{key}}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(cItem, i) in items" :key="i">
+                    <td v-for="(valor, key) in item">{{cItem[key]}}</td>
+                    <td>
+                        <button @click="seleccionar(cItem)">Seleccionar</button>
+                        <button @click="eliminar(cItem.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

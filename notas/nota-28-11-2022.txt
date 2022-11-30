@@ -1,0 +1,69 @@
+- Cree un proyecto: 
+    - tienda-autos
+        - Dentro del proyecto cree dos carpetas
+            - backend
+                - copie el codigo del backend 04
+                    - Para correr el backend de forma correcta
+                    - Ejecuto: npm i
+                        - Va a instalar las dependencias que encuentre dentro del package.json
+            - frontend
+                - Copie el contenido de la carpeta app-crud
+                    - Ejecute: npm run server
+                        - Va a ejecutar el: http-server -p 8080 -c-1
+                            - Que esto va a ejecutar un webserver solo para el frontEnd
+        - En resumen: 
+            - Dos urls
+                - http://localhost:3000/ ---> Corresponde al backend
+                - http://localhost:8080/ ---> Corresponde al frontEnd
+
+            ---> Como se comunica un server con el otro
+        
+        - Ajustes: 
+            - La peticion desde el cliente (navegador) no llegaba a la API
+                - Entonces se habilito el cors
+                    - Inistalamos primero: npm i --save cors
+            - Resulta que los campos de la API en los listados no son son los mismos que los campos enviados en el POST/PUT
+                - Se normalizaron los campos desde la Query de la base de datos utilizando los aliases
+                    - SELECT ID AS id, Nombre AS nombre FROM ...
+            - Dentro del FrontEnd
+                - los camos del id estaban todos con el nombre _id
+                    - HTML: Nos dimos cuenta en el caso de eliminar
+                    - JS: Nos dimos cuenta en el coso de editar
+            - La API de actualizar (PUT) le aregamos un parametro :id al ruteo para que acepte la ID desde el frontend 
+    
+    Autenticacion: Con un par de usuario y clave verifica que el usuario es quien es para el sistema
+
+        FRONT [ email, clave ] ------> API < Verifica la identidad > ----> Obtiene los datos del usuario
+
+        JSON: 
+            {
+                email: "lexcasa@gmail.com",
+                clave: "123123"
+            }
+
+            A traves de un POST
+
+            Como sabemos que (email, clave) es Alex?
+
+        -> Tabla de usuarios: 
+
+            | ID      | Nombre        | Apellido      | Documento     | Email               | Clave     |
+            ---------------------------------------------------------------------------------------------
+            | 1       | Alex          | Casadevall    | 123123        | lexcasa@gmail.com   | 123123    |
+
+
+            Por seguridad 
+                -> Clave --- Funcion: hash --- basdc123nascnmqds
+                -> Algoritmo: 
+                    - md5 
+            
+            INSERT INTO usuarios (Nombre, Apellido, Documento, Email, Clave)
+            VALUES ("Alex", "Casadevall", "123123", "lexcasa@gmail.com", MD5("123123"))
+
+            INSERT INTO usuarios (Nombre, Apellido, Documento, Email, Clave)
+            VALUES ("Robert", "Pereira", "222333", "rpereira@gmail.com", MD5("111222"))
+
+            -> Para loguearme necesito una Query que obtenga el usuario por Email y clave
+
+                SELECT * FROM usuarios
+                WHERE Email = "lexcasa@gmail.com" AND Clave = MD5("123123")
