@@ -23,3 +23,4 @@ Dada la realidad de un negocio minorista de calzados, es necesario potenciar las
     Relaciones: 
 
         Ventas
+            (ID, IdProducto, IdCliente, Cantidad, Precio, Periodo)
