@@ -1,0 +1,25 @@
+Dada la realidad de un negocio minorista de calzados, es necesario potenciar las ventas en un determinado período de tiempo: Diciembre, Enero. Los productos están divididos en: Zapatos, Championes, Sandalias, Etc. Y cada tipo de producto con su respectiva marca: Nike, Rebook, etc.
+
+    Idea global: 
+        - Minorista
+            - Ventas o logistica
+                - Entidades: A, B, C ...
+                - Relacion: stock o ventas
+    - Entidades
+        - Inmutables y unicas
+        - Entidades con dependencias 
+
+    - Relaciones
+        - Acciones entre entidades
+
+
+
+    Entidades: 
+
+        Productos (ID, IdMarca, TipoProducto)
+        Marcas (ID, Nombre)
+        Clientes (ID, Nombre, Documento, Email)
+    
+    Relaciones: 
+
+        Ventas

@@ -11,31 +11,44 @@
 </head>
 <body>
     <div id="app">
-        <h2>{{mensaje}}</h2>
-        <form action="">
-            <div v-for="(valor, key) in item" v-if="valor != undefined">
-                <input type="text" v-bind:placeholder="key" v-model="item[key]" v-bind:disabled="key == '_id'">
-            </div>
-            <button type="button" @click="guardar()">Guardar</button>
-            <button type="button" @click="initDatos()">Cancelar</button>
-        </form>
-        <table>
-            <thead>
-                <tr>
-                    <th v-for="(valor, key) in item">{{key}}</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(cItem, i) in items" :key="i">
-                    <td v-for="(valor, key) in item">{{cItem[key]}}</td>
-                    <td>
-                        <button @click="seleccionar(cItem)">Seleccionar</button>
-                        <button @click="eliminar(cItem.id)">Eliminar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="login" v-if="isLogged == false">
+            <h2>Login al sistema</h2>
+            <form action="">
+                <input type="email" placeholder="Usuario" v-model="login.email">
+                <br>
+                <input type="password" placeholder="Clave" v-model="login.clave">
+                <br>
+                <button type="button" @click="loginUser()">Ingresar</button>
+            </form>
+        </div>
+        <div id="crud--marcas" v-if="isLogged == true">
+            <button type="button" @click="logOut()">Cerrar sesion</button>
+            <h2>{{mensaje}}</h2>
+            <form action="">
+                <div v-for="(valor, key) in item" v-if="valor != undefined">
+                    <input type="text" v-bind:placeholder="key" v-model="item[key]" v-bind:disabled="key == '_id'">
+                </div>
+                <button type="button" @click="guardar()">Guardar</button>
+                <button type="button" @click="initDatos()">Cancelar</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th v-for="(valor, key) in item">{{key}}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(cItem, i) in items" :key="i">
+                        <td v-for="(valor, key) in item">{{cItem[key]}}</td>
+                        <td>
+                            <button @click="seleccionar(cItem)">Seleccionar</button>
+                            <button @click="eliminar(cItem.id)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     
     <script src="app.js"></script>

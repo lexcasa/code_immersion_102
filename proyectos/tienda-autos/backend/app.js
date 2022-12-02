@@ -25,6 +25,18 @@ app.post('/login', async (req, res) => {
     const usuario = req.body
     let arr     = await Usuario.login(usuario)
 
+    if(arr.length > 0){
+        arr = {
+            success: true,
+            user: {...arr[0]}
+        }
+    } else {
+        arr = {
+            success: false,
+            error: "Usuario y/o clave incorrecta"
+        }
+    }
+
     res.send(arr)
 })
 

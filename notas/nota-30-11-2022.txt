@@ -1,0 +1,42 @@
+- Integrar el Login - FrontEnd
+    ->
+        {
+            "email":"rpereira@gmail.com",
+            "clave":"111222"
+        }
+    
+    -> Respuesta 
+        {
+            usuario
+            ...
+        }
+    
+    Si el usuario es correcto
+        -> 
+            {
+                usuario,
+                success: true
+            }
+    
+    Si el usuario es incorrecto
+            {
+                success: false,
+                error: "Usuario y/o clave incorrecta"
+            }
+
+    
+    FrontEnd: 
+        -> Dos pantallas: 
+            -> HTML de Login
+            -> HTML del crud
+
+            - Flujo: 
+                1. Cuando entro a la app cargo el login
+                2. Luego de autenticar muestro la pantalla del crud
+                3. Voy a manejar estados
+                    -> variable: isLogged 
+                                    - true  / El usuario esta logguedo
+                                        - Vemos la pantalla del CRUD
+
+                                    - false / Usuario no loggueado
+                                        - Vemos la pantalla del Login

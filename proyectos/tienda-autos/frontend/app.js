@@ -9,11 +9,32 @@ const app = new Vue({
       item: {...MODEL_BASE},
       items: [],
       API: 'http://localhost:3000',
-      MODEL: '/marcas'
+      MODEL: '/marcas',
+      login: {
+        email: '',
+        clave: ''
+      },
+      isLogged: false
     },
     methods: {
         initDatos: function (){
             this.item = {...MODEL_BASE}
+        },
+        logOut: function (){
+            this.isLogged = false
+        },
+        loginUser: function (){
+            const user = {...this.login}
+            const URL  = this.API + '/login'
+            axios.post(URL, user).then( res => {
+                // Autentico correctamente
+                if (res.data.success == true){
+                    this.isLogged = true
+                } else {
+                    // Mostrar el mensaje de error del backend
+                    alert(res.data.error)
+                }
+            })
         },
         // t=1
         guardar: function (){
