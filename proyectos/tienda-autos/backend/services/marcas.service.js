@@ -16,14 +16,14 @@ const Marca = {
     },
     new: function (marca){
         const query = `
-            INSERT INTO marcas (Nombre)
+            INSERT INTO ${tabla} (Nombre)
             VALUES (?)
         `
         return Mdb.query(query, [marca.nombre]) // { nombre: "SEAT" }
     },
     edit: function (marca){
         const query = `
-            UPDATE marcas SET Nombre = ?
+            UPDATE ${tabla} SET Nombre = ?
             WHERE ID = ? 
         `
         return Mdb.query(query, [marca.nombre, marca.id]) // { id: 4, nombre: "Honda" }
